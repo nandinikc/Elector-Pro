@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 100%;
+
+        }
+        .image-container
+        {
+            text-align:center;
+
+        }
+        td {
+            padding-left:200px;
+            text-align: center;
+        }
+
+        .mech {
+            width: 220px;
+            height: 180px;
+            border-radius: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 25px 0;
+            color: white;
+            display: inline-block;
+            font-family: "Arvo", cursive;
+            text-shadow: 3px 0 #DA0463;
+            padding-left:-300px;
+        }
+
+        h2 {
+            font-weight: 800;
+            font-size: 2rem;
+
+        }
+
+        html,
+        body {
+            display: grid;
+            height: 100%;
+            width: 100%;
+            place-items: center;
+            background: -webkit-linear-gradient(left, #c53410, #dfb21f, #0059b3, #bed5ec);
+        }
+
+        .button {
+            --glow-color: rgb(217, 176, 255);
+             //--glow-spread-color: rgba(191, 123, 255, 0.781);
+            --enhanced-glow-color: rgb(231, 206, 255);
+            --btn-color: rgb(100, 61, 136);
+            border: .15em solid var(--glow-color);
+            padding: 0.5em 1.5em;
+            margin-top: 10px;
+            color: var(--glow-color);
+            font-size: 16px;
+            font-weight: bold;
+            background-color: var(--btn-color);
+            border-radius: 1em;
+            outline: none;
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),=
+                inset 0 0 .75em .25em var(--glow-color);
+            text-shadow: 0 0 .5em var(--glow-color);
+            position: relative;
+            transition: all 0.3s;
+            cursor:pointer;
+        }
+
+        .button::after {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            top: 120%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--glow-spread-color);
+            filter: blur(2em);
+            opacity: .7;
+            transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+        }
+
+        .button:hover {
+            color: var(--btn-color);
+            background-color: var(--glow-color);
+            box-shadow: 0 0 1em .25em var(--glow-color),
+                0 0 4em 2em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
+        }
+
+        .button:active {
+            box-shadow: 0 0 0.6em .25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 .5em .25em var(--glow-color);
+        }
+        #img1{
+
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 100%;
+        }
+
+        /* .ece {
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+        } */
+    .1{
+
+    }
+       
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Choose Your Leader</h1>
+        <form action="http://127.0.0.1:5000/contact" method="POST">
+            <h3 name="pspk" value="{{result}}"></h3>
+            <center>
+
+
+        <table>
+            <tr>
+                <td>
+                   <!-- <img id="img1" style="background-image:url({{url_for('static',filename='images/tippu.jpg')}});"> -->
+                    <center><img style="background-image:url({{url_for('static',filename='images/tippu2.jpg')}});" alt=""></center>
+                    <br>
+                        <input class="button" onclick="myFunction1()" type="submit" name="submit_button" value="tippu">
+                </td>
+                <td>
+                    <center><img style="background-image:url({{url_for('static',filename='images/loki2.jpg')}});" alt=""></center>
+                    <br>
+                     <input class="button"onclick="myFunction1()" type="submit" name="submit_button" value="lokesh">
+                </td>
+
+            </tr>
+            <tr>
+                <td class="image-container">
+                    <center><img style="background-image:url({{url_for('static',filename='images/chaithu2.jpg')}});" alt=""></center>
+                    <br>
+                     <input class="button" onclick="myFunction1()" type="submit" name="submit_button" value="chaithanya">
+                </td>
+                <td>
+                    <center><img style="background-image:url({{url_for('static',filename='images/indu2.jpg')}});" alt=""></center>
+                    <br>
+                     <input class="button" onclick="myFunction1()" type="submit" name="submit_button" value="indu">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+
+        </table>
+            </center>
+                <br><br>
+            <input class="button" type="submit" value="logout" name="submit_button">
+        </form>
+        <script>
+            function myFunction1()
+            {
+                
+                alert("Your vote has been taken successfully!");
+                window.location.href = "test.html"
+            }
+        </script>
+
+    </center>
+</body>
+
+</html>
